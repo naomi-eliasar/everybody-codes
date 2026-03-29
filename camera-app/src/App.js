@@ -55,8 +55,11 @@ function App() {
   }, []);
 
   return (
-    <div className="p-4">
-      <div className='grid grid-cols-4 gap-4'>
+    <div className="flex flex-col gap-4 p-4">
+      <div className='bg-emerald-500 rounded p-4'>
+        Display map with camera locations
+      </div>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {Object.entries(groupedCameras).map(([group, cameras]) => (
           <div key={group} className='p-4 bg-emerald-500 rounded text-black flex flex-col gap-4'>
             <h2 className='text-lg font-bold bg-emerald-200 p-2 rounded'>Camera's: {group}</h2>
@@ -74,7 +77,6 @@ function App() {
           </div>
         ))}
       </div>      
-
     </div>
   );
 }
