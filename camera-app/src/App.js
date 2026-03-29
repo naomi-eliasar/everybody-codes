@@ -3,6 +3,7 @@ import CameraList from './Components/CameraList';
 import CameraMap from './Components/CameraMap/CameraMap';
 
 function App() {
+  const [selectedCamera, setSelectedCamera] = useState(null);
   const [groupedCameras, setGroupedCameras] = useState({
     '0-600': [],
     '600-700': [],
@@ -57,9 +58,9 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 p-4 bg-emerald-600">
-      <CameraMap groupedCameras={groupedCameras} />
-      <CameraList cameras={groupedCameras} />    
+    <div className="flex flex-col gap-4 p-4 bg-[#F67905]">
+      <CameraMap groupedCameras={groupedCameras} selectedCamera={selectedCamera} />
+      <CameraList cameras={groupedCameras} onSelectCamera={setSelectedCamera} />    
     </div>
   );
 }

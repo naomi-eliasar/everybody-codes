@@ -3,10 +3,11 @@ import leaflet from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import cameraPng from './security-camera-map-pin.png';
 
-export default function CameraMap({groupedCameras}) {
+export default function CameraMap({groupedCameras, selectedCamera}) {
     const mapContainerRef = useRef(null);
     const mapRef = useRef(null);
     const layerControlRef = useRef(null);
+    const markerRefs = useRef({});
 
     //Initialize map
     useEffect(() => {
@@ -51,6 +52,7 @@ export default function CameraMap({groupedCameras}) {
                 if (typeof camera.lat !== 'number' || typeof camera.lon !== 'number') return;
                 const marker = leaflet.marker([camera.lat, camera.lon], { icon: cameraIcon });
                 marker.bindPopup(`<b>${camera.name || 'Camera'}</b><br>Lat: ${camera.lat}, Lon: ${camera.lon}`);
+                markerRefs.current[camera.name] = marker;
                 layer.addLayer(marker);
             });
             layer.addTo(mapRef.current);
@@ -72,8 +74,18 @@ export default function CameraMap({groupedCameras}) {
         };
     }, [groupedCameras]);
 
+    //Open the popup and center the map on the selected camera from the list
+    useEffect(() => {
+        if (!mapRef.current || !selectedCamera) return;
+        const marker = markerRefs.current[selectedCamera.name];
+        if (marker) {
+            marker.openPopup();
+            mapRef.current.setView(marker.getLatLng(), 15, { animate: true });
+        }
+    }, [selectedCamera]);
+
     return (
-        <div className='bg-emerald-500 rounded p-4'>
+        <div className='bg-[#12121C] rounded p-4'>
             <div ref={mapContainerRef} className='leaflet-container h-80 md:h-96'></div>
         </div>
     );
