@@ -57,7 +57,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 p-4">
+    <div className="flex flex-col gap-4 p-4 bg-emerald-600">
       <CameraMap groupedCameras={groupedCameras} />
       <CameraList cameras={groupedCameras} />    
     </div>

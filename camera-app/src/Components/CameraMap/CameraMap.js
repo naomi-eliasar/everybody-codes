@@ -74,7 +74,7 @@ export default function CameraMap({groupedCameras}) {
 
     return (
         <div className='bg-emerald-500 rounded p-4'>
-            <div ref={mapContainerRef} className='leaflet-container'></div>
+            <div ref={mapContainerRef} className='leaflet-container h-80 md:h-96'></div>
         </div>
     );
 }
