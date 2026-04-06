@@ -1,3 +1,40 @@
+# De Opdracht uitgevoerd
+
+## CLI
+In de map search kan er met search.java gezocht worden op een deel van een camera name.
+
+Bijvoorbeeld:
+```
+javac Search.java
+java Search Neude
+```
+
+Verwachte output:
+
+```none
+501 | UTR-CM-501 Neude rijbaan voor Postkantoor | 52.093421 | 5.118278
+503 | UTR-CM-503 Neude plein | 52.093448 | 5.118536
+504 | UTR-CM-504 Neude / Schoutenstraat | 52.092995 | 5.119088
+505 | UTR-CM-505 Neude / Drakenburgstraat / Vinkenurgstraat | 52.092843 | 5.118351
+506 | UTR-CM-506 Vinkenburgstraat / Neude | 52.092378 | 5.117902
+507 | UTR-CM-507 Vinkenburgstraat richting Neude | 52.092234 | 5.117766
+etc.
+```
+
+## API
+In de map camera-app, run `node server/index.js` om de server te starten.
+Open [http://localhost:5000](http://localhost:5000) om het in je browser te bekijken.
+
+## Webapplicatie
+In de map camera-app, run `npm-start` om de applicatie te starten.
+Open [http://localhost:3000](http://localhost:3000) om de applicatie in je browser te bekijken.
+
+<br>
+
+---
+
+<br>
+
 # Keep Talking and Everybody Codes
 
 Een repository om te laten zien hoe jij code schrijft en over code denkt.
