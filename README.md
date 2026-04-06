@@ -22,11 +22,11 @@ etc.
 ```
 
 ## API
-In de map camera-app, run `node server/index.js` om de server te starten.
+Navigeer naar de map camera-app en run `node server/index.js` om de server te starten.
 Open [http://localhost:5000](http://localhost:5000) om het in je browser te bekijken.
 
 ## Webapplicatie
-In de map camera-app, run `npm-start` om de applicatie te starten.
+In de map camera-app, run `npm start` om de applicatie te starten.
 Open [http://localhost:3000](http://localhost:3000) om de applicatie in je browser te bekijken.
 
 <br>
